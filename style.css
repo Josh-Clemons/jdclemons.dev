@@ -1,0 +1,167 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:        #111111;
+  --surface:   #1a1a1a;
+  --border:    #2a2a2a;
+  --text:      #d4d4d4;
+  --muted:     #666666;
+  --added:     #7ec8a0;
+  --removed:   #c87e7e;
+  --changed:   #c8b47e;
+  --link:      #7ea8c8;
+  --tag:       #4a4a4a;
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+}
+
+main {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* ── Header ── */
+
+header h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+.tagline {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* ── Changelog ── */
+
+.changelog {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.entry {
+  border-left: 1px solid var(--border);
+  padding-left: 1.25rem;
+}
+
+.version-line {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.version {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.tag {
+  font-size: 0.7rem;
+  background: var(--tag);
+  color: var(--muted);
+  padding: 0.1rem 0.4rem;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+}
+
+.entry ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.entry li::before {
+  margin-right: 0.6rem;
+  font-weight: 700;
+}
+
+.added::before   { content: '+'; color: var(--added); }
+.removed::before { content: '-'; color: var(--removed); }
+.changed::before { content: '~'; color: var(--changed); }
+
+/* ── Projects ── */
+
+.projects h2 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+.projects-note {
+  font-size: 0.75rem;
+  color: var(--tag);
+  margin-bottom: 0.75rem;
+}
+
+.projects ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.projects a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.projects a:hover {
+  text-decoration: underline;
+}
+
+/* ── Footer ── */
+
+footer {
+  font-size: 0.8rem;
+  color: var(--muted);
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--text);
+}
+
+.sep {
+  margin: 0 0.5rem;
+}
+
+/* ── Mobile ── */
+
+@media (max-width: 480px) {
+  body {
+    padding: 2.5rem 1rem;
+  }
+}
