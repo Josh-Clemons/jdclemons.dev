@@ -1,0 +1,25 @@
+# Environment / secrets
+.env
+*.env
+.env.*
+!*.env.example
+
+# Pi sessions
+.pi/sessions/
+
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea
+.claude
